@@ -1,0 +1,7 @@
+/build/
+/dist/
+/node_modules/
+*.html
+components.d.ts
+!.commitlintrc.js
+!.eslintrc.js

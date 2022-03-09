@@ -1,0 +1,59 @@
+{
+  "name": "vitesaber",
+  "private": true,
+  "version": "0.0.0",
+  "author": "kazimicscn",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "lint": "eslint src",
+    "preview": "vite preview",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "axios": "^0.26.0",
+    "echarts": "^5.3.0",
+    "element-plus": "^2.0.4",
+    "pinia": "^2.0.11",
+    "vue": "^3.2.25",
+    "vue-router": "^4.0.13"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^16.2.1",
+    "@commitlint/config-conventional": "^16.2.1",
+    "@iconify/json": "^2.1.10",
+    "@types/lodash-es": "^4.17.6",
+    "@types/node": "^17.0.21",
+    "@typescript-eslint/eslint-plugin": "^5.13.0",
+    "@typescript-eslint/parser": "^5.13.0",
+    "@vitejs/plugin-legacy": "^1.7.1",
+    "@vitejs/plugin-vue": "^2.2.0",
+    "@vue/compiler-sfc": "^3.2.31",
+    "@vueuse/core": "^7.7.0",
+    "eslint": "^8.10.0",
+    "eslint-config-prettier": "^8.4.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^8.5.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.5",
+    "postcss": "^8.4.7",
+    "postcss-preset-env": "^7.4.1",
+    "prettier": "^2.5.1",
+    "sass": "^1.49.9",
+    "typescript": "^4.5.4",
+    "unplugin-auto-import": "^0.6.1",
+    "unplugin-icons": "^0.13.2",
+    "unplugin-vue-components": "^0.17.21",
+    "vite": "^2.8.0",
+    "vite-plugin-vue-setup-extend": "^0.4.0",
+    "vite-plugin-windicss": "^1.8.1",
+    "vue-tsc": "^0.29.8",
+    "windicss": "^3.5.0"
+  },
+  "lint-staged": {
+    "*.{ts,js,vue}": [
+      "eslint"
+    ]
+  }
+}
