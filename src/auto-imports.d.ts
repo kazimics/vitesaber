@@ -30,6 +30,7 @@ declare global {
   const ElButton: typeof import('element-plus/es')['ElButton']
   const ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
   const ElDatePicker: typeof import('element-plus/es')['ElDatePicker']
+  const ElMessage: typeof import('element-plus/es')['ElMessage']
   const extendRef: typeof import('@vueuse/core')['extendRef']
   const getActivePinia: typeof import('pinia')['getActivePinia']
   const getCurrentInstance: typeof import('vue')['getCurrentInstance']

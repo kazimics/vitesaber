@@ -64,10 +64,9 @@ export default defineConfig({
       imports: ['vue', 'pinia', 'vue-router', '@vueuse/core'],
       resolvers: [ElementPlusResolver()],
       // Generate corresponding .eslintrc-auto-import.json file.
-      // eslint globals Docs - https://eslint.org/docs/user-guide/configuring/language-options#specifying-globals
       eslintrc: {
         enabled: true, // Default `false`
-        filepath: './.eslintrc-auto-import.json', // Default `./.eslintrc-auto-import.json`
+        filepath: './.eslintrc-auto-import.json',
         globalsPropValue: true
       }
     }),
@@ -85,6 +84,7 @@ export default defineConfig({
         drop_debugger: true
       }
     },
+    minify: 'terser',
     assetsDir: 'static/assets',
     // 静态资源打包到dist下的不同目录
     rollupOptions: {

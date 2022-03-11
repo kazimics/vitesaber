@@ -6,6 +6,7 @@ import type {
   AxiosError
 } from 'axios'
 import type { RequestConfig, RequestInterceptors } from './type'
+import showCodeMessage from './code'
 
 class Request {
   instance: AxiosInstance
@@ -19,7 +20,6 @@ class Request {
     this.instance.interceptors.request.use(
       (config: AxiosRequestConfig) => {
         // 全局请求拦截器
-        console.log('全局请求拦截器')
         return config
       },
       (err: Error | AxiosError) => err
@@ -40,10 +40,20 @@ class Request {
     this.instance.interceptors.response.use(
       (res: AxiosResponse) => {
         // 全局响应拦截器
-        console.log('全局响应拦截器')
-        return res.data
+        if (res.status === 200) {
+          return res.data
+        }
+        ElMessage.error(JSON.stringify(res.status))
       },
-      (err: Error | AxiosError) => err
+      (err: AxiosError | Error) => {
+        const { response } = <AxiosError>err
+        if (response) {
+          ElMessage.error(showCodeMessage(response.status))
+          return Promise.reject(response.data)
+        }
+        ElMessage.warning('网络连接异常,请稍后再试!')
+        return Promise.reject(err)
+      }
     )
   }
 

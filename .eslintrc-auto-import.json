@@ -29,6 +29,7 @@
     "ElButton": true,
     "ElConfigProvider": true,
     "ElDatePicker": true,
+    "ElMessage": true,
     "extendRef": true,
     "getActivePinia": true,
     "getCurrentInstance": true,

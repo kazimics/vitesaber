@@ -23,7 +23,7 @@ module.exports = {
     'issues',
     'lerna'
   ],
-  scopes: ['readme', ''],
+  scopes: ['readme', 'axios', ''],
   types: {
     chore: {
       description: 'Build process or auxiliary tool changes',
