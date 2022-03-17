@@ -10,6 +10,8 @@ import {
   ElementPlusResolver,
   VueUseComponentsResolver
 } from 'unplugin-vue-components/resolvers'
+import OptimizationPersist from 'vite-plugin-optimize-persist'
+import PkgConfig from 'vite-plugin-package-config'
 import WindiCSS from 'vite-plugin-windicss'
 import { resolve } from 'path'
 
@@ -70,6 +72,8 @@ export default defineConfig({
         globalsPropValue: true
       }
     }),
+    PkgConfig(),
+    OptimizationPersist(),
     WindiCSS()
   ],
   build: {

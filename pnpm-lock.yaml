@@ -31,6 +31,8 @@ specifiers:
   unplugin-icons: ^0.13.2
   unplugin-vue-components: ^0.17.21
   vite: ^2.8.0
+  vite-plugin-optimize-persist: ^0.1.2
+  vite-plugin-package-config: ^0.1.1
   vite-plugin-vue-setup-extend: ^0.4.0
   vite-plugin-windicss: ^1.8.1
   vue: ^3.2.25
@@ -73,6 +75,8 @@ devDependencies:
   unplugin-icons: 0.13.2_7c21275ff0dea6ae855d07d572d52fcf
   unplugin-vue-components: 0.17.21_vite@2.8.4+vue@3.2.31
   vite: 2.8.4_sass@1.49.9
+  vite-plugin-optimize-persist: 0.1.2_c5cd0a15ea9fe070c9e7d92508f58b60
+  vite-plugin-package-config: 0.1.1_vite@2.8.4
   vite-plugin-vue-setup-extend: 0.4.0_vite@2.8.4
   vite-plugin-windicss: 1.8.1_vite@2.8.4
   vue-tsc: 0.29.8_typescript@4.5.5
@@ -3886,6 +3890,31 @@ packages:
     dependencies:
       spdx-correct: 3.1.1
       spdx-expression-parse: 3.0.1
+    dev: true
+
+  /vite-plugin-optimize-persist/0.1.2_c5cd0a15ea9fe070c9e7d92508f58b60:
+    resolution: {integrity: sha512-H/Ebn2kZO8PvwUF08SsT5K5xMJNCWKoGX71+e9/ER3yNj7GHiFjNQlvGg5ih/zEx09MZ9m7WCxOwmEKbeIVzww==}
+    peerDependencies:
+      vite: ^2.0.0
+      vite-plugin-package-config: ^0.1.0
+    dependencies:
+      debug: 4.3.3
+      fs-extra: 10.0.1
+      vite: 2.8.4_sass@1.49.9
+      vite-plugin-package-config: 0.1.1_vite@2.8.4
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /vite-plugin-package-config/0.1.1_vite@2.8.4:
+    resolution: {integrity: sha512-w9B3I8ZnqoyhlbzimXjXNk85imrMZgvI9m8f6j3zonK5IVA5KXzpT+PZOHlDz8lqh1vqvoEI1uhy+ZDoLAiA/w==}
+    peerDependencies:
+      vite: ^2.0.0
+    dependencies:
+      debug: 4.3.3
+      vite: 2.8.4_sass@1.49.9
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /vite-plugin-vue-setup-extend/0.4.0_vite@2.8.4:
