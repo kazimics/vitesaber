@@ -17,3 +17,8 @@ export const defHttp = new Request({
     }
   }
 })
+
+// 取消全部请求
+export const cancelAllRequest = () => {
+  return defHttp.cancelAllRequest()
+}

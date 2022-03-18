@@ -10,11 +10,14 @@ const state = reactive({
 })
 
 const getUserInfo = async () => {
-  state.userInfo = await getGithubInfo('kazimics')
+  try {
+    state.userInfo = await getGithubInfo('kazimics')
+  } catch (err) {
+    console.log(err)
+  }
 }
 
 onBeforeMount(() => {
-  console.log('2')
   getUserInfo()
 })
 
@@ -42,6 +45,7 @@ let dateValue = ref('')
       alt="Vue logo"
       :src="state.userInfo.avatar_url"
       class="mx-auto pt-[50px]"
+      @click="getUserInfo"
     />
     <router-view />
   </el-config-provider>

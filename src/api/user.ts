@@ -7,13 +7,12 @@ export function getGithubInfo(
   return defHttp.request({
     url: `/users/${username}`,
     method: 'get',
+    isCancelRepeatRequest: true,
     interceptors: {
       requestInterceptors(res) {
-        console.log('接口请求拦截', res)
         return res
       },
       responseInterceptors(result) {
-        console.log('接口响应拦截', result)
         return result
       }
     }
