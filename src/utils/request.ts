@@ -17,7 +17,7 @@ class Request {
   pendingRequestSourceMap: Map<string, Canceler>
 
   constructor(config: RequestConfig) {
-    config.isCancelRepeatRequest = false
+    config.isCancelRepeatRequest = true // 是否开启取消重复请求, 默认为 true
 
     this.instance = axios.create(config)
     this.interceptorsObj = config.interceptors

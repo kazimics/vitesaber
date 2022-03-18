@@ -7,7 +7,6 @@ export function getGithubInfo(
   return defHttp.request({
     url: `/users/${username}`,
     method: 'get',
-    isCancelRepeatRequest: true,
     interceptors: {
       requestInterceptors(res) {
         return res
