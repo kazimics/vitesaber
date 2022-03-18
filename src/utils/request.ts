@@ -63,8 +63,7 @@ class Request {
           ElMessage.error(showCodeMessage(response.status))
           return Promise.reject(response.data)
         }
-        !axios.isCancel(err) &&
-          ElMessage.warning('网络连接异常或重复请求接口,请稍后再试!')
+        !axios.isCancel(err) && ElMessage.warning('网络连接异常,请稍后再试!')
         return Promise.reject(err)
       }
     )
