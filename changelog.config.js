@@ -10,6 +10,7 @@ module.exports = {
     'refactor',
     'style',
     'ci',
+    'build',
     'perf'
   ],
   maxMessageLength: 64,
@@ -74,6 +75,11 @@ module.exports = {
       description: 'Adding missing tests',
       emoji: '💍',
       value: 'test'
+    },
+    build: {
+      description: 'Build system or package dependency updates',
+      emoji: '🏗️',
+      value: 'build'
     }
   }
 }

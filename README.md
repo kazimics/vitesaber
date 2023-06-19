@@ -37,7 +37,6 @@
 - [unplugin-auto-import](https://github.com/antfu/unplugin-auto-import) - 自动按需加载 API
 - [vite-plugin-windicss](https://github.com/antfu/vite-plugin-windicss) - Windi CSS 的整合
 - [VueUse](https://github.com/antfu/vueuse) - 实用的 Composition API 工具合集
-- [vite-plugin-optimize-persist](https://github.com/antfu/vite-plugin-optimize-persist) - 允许你在 vite 中显式设置依赖项
 
 ### 编码风格
 
