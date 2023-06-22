@@ -23,6 +23,12 @@ module.exports = {
   rules: {
     'vue/require-default-prop': 'off',
     '@typescript-eslint/no-explicit-any': ['off'],
-    'vue/multi-word-component-names': 0
+    'vue/multi-word-component-names': 0,
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto'
+      }
+    ]
   }
 }
