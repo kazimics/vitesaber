@@ -26,14 +26,12 @@ let dateValue = ref('')
 
 <template>
   <el-config-provider :locale="zhCn">
-    <div class="pl-[48px]">
-      <el-date-picker
-        v-model="dateValue"
-        type="date"
-        placeholder="Pick a day"
-      ></el-date-picker>
-      <i-flat-color-icons-android-os style="font-size: 2em; color: red" />
-      <el-breadcrumb separator="/">
+    <div>
+      <i-flat-color-icons-android-os
+        style="font-size: 2em; color: red"
+        class="mx-auto"
+      />
+      <el-breadcrumb separator="/" class="flex flex-row justify-center pt-8">
         <el-breadcrumb-item :to="{ path: '/home' }">Home</el-breadcrumb-item>
         <el-breadcrumb-item :to="{ path: '/helloWorld' }">
           HelloWorld
@@ -44,9 +42,14 @@ let dateValue = ref('')
     <img
       alt="Vue logo"
       :src="state.userInfo.avatar_url"
-      class="mx-auto pt-[50px]"
+      class="mx-auto py-8"
       @click="getUserInfo"
     />
+    <el-date-picker
+      v-model="dateValue"
+      type="date"
+      placeholder="Pick a day"
+    ></el-date-picker>
     <router-view />
   </el-config-provider>
 </template>

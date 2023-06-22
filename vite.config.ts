@@ -10,7 +10,6 @@ import {
   ElementPlusResolver,
   VueUseComponentsResolver
 } from 'unplugin-vue-components/resolvers'
-import WindiCSS from 'vite-plugin-windicss'
 import { resolve } from 'path'
 
 const pathResolve = (dir: string) => resolve(__dirname, dir)
@@ -69,8 +68,7 @@ export default defineConfig({
         filepath: './.eslintrc-auto-import.json',
         globalsPropValue: true
       }
-    }),
-    WindiCSS()
+    })
   ],
   build: {
     reportCompressedSize: false,
