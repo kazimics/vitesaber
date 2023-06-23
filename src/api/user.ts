@@ -9,6 +9,7 @@ export function getGithubInfo(
     method: 'get',
     interceptors: {
       requestInterceptors(res) {
+        console.log('接口请求拦截')
         return res
       },
       responseInterceptors(result) {

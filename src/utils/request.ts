@@ -6,51 +6,58 @@ import type {
   AxiosError,
   Canceler
 } from 'axios'
-import type { RequestConfig, RequestInterceptors } from './type'
+import type {
+  CreateRequestConfig,
+  RequestConfig,
+  RequestInterceptors
+} from './type'
 import showCodeMessage from './code'
 
 class Request {
   instance: AxiosInstance
 
-  interceptorsObj?: RequestInterceptors
+  interceptorsObj?: RequestInterceptors<AxiosResponse>
 
+  // 取消请求控制器
   pendingRequestSourceMap: Map<string, Canceler>
 
-  constructor(config: RequestConfig) {
+  constructor(config: CreateRequestConfig) {
     config.isCancelRepeatRequest = true // 是否开启取消重复请求, 默认为 true
 
     this.instance = axios.create(config)
     this.interceptorsObj = config.interceptors
     this.pendingRequestSourceMap = new Map()
 
+    // 拦截器执行顺序 接口请求 -> 实例请求 -> 全局请求 -> 实例响应 -> 全局响应 -> 接口响应
+    // 全局请求拦截器
     this.instance.interceptors.request.use(
-      (config: RequestConfig) => {
-        // 全局请求拦截器
-        this.removePending(config)
+      res => {
+        console.log('全局请求拦截')
+        this.removePending(res)
         if (config.isCancelRepeatRequest) {
-          this.addPending(config)
+          this.addPending(res)
         }
-        return config
+        return res
       },
       (err: Error | AxiosError) => err
     )
 
+    // 实例请求拦截器
     this.instance.interceptors.request.use(
-      // 实例请求拦截器
       this.interceptorsObj?.requestInterceptors,
       this.interceptorsObj?.requestInterceptorsCatch
     )
 
+    // 实例响应拦截器
     this.instance.interceptors.response.use(
-      // 实例响应拦截器
       this.interceptorsObj?.responseInterceptors,
       this.interceptorsObj?.responseInterceptorsCatch
     )
 
+    // 全局响应拦截器
     this.instance.interceptors.response.use(
       (res: AxiosResponse) => {
         this.removePending(res.config)
-        // 全局响应拦截器
         if (res.status === 200) {
           return res.data
         }
@@ -72,13 +79,13 @@ class Request {
   request<T>(config: RequestConfig): Promise<T> {
     return new Promise((resolve, reject) => {
       if (config.interceptors?.requestInterceptors) {
-        config = config.interceptors.requestInterceptors(config)
+        config = config.interceptors.requestInterceptors(config as any)
       }
       this.instance
         .request<T, any>(config)
         .then(res => {
           if (config.interceptors?.responseInterceptors) {
-            res = config.interceptors.responseInterceptors<T>(res)
+            res = config.interceptors.responseInterceptors(res)
           }
           resolve(res)
         })
@@ -133,6 +140,7 @@ class Request {
     this.pendingRequestSourceMap?.forEach((source, key) => {
       source(key)
     })
+    this.pendingRequestSourceMap.clear()
   }
 }
 

@@ -9,6 +9,7 @@ export const defHttp = new Request({
   interceptors: {
     // 请求拦截器
     requestInterceptors: config => {
+      console.log('实例请求拦截')
       return config
     },
     // 响应拦截器
