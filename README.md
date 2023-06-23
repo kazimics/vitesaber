@@ -2,7 +2,7 @@
 
 ## 特性
 
-- ⚡️ [Vue 3](https://github.com/vuejs/vue-next), [Vite 2](https://github.com/vitejs/vite), [pnpm](https://pnpm.js.org/) - 快！
+- ⚡️ [Vue 3](https://github.com/vuejs/core), [Vite 4](https://github.com/vitejs/vite), [pnpm](https://pnpm.js.org/) - 快！
 - 💪 [Typescript](https://www.typescriptlang.org/) - 当然！必不可少
 - 🎉 [Element Plus 开箱即用](https://github.com/element-plus/element-plus) - 基于 Vue.js 3 的强大 UI 库
 - 🔥 [Axios 配置和封装](https://github.com/axios/axios) - 基于 Promise 的 HTTP 请求库
@@ -10,7 +10,7 @@
 - 📦 [组件自动按需加载](https://github.com/antfu/unplugin-vue-components) - 自动按需注册组件, 无需 import
 - 📥 [API 自动按需加载](https://github.com/antfu/unplugin-auto-import) - 无需手动 import 进行引入
 - 🍍 [Pinia 状态管理](https://pinia.esm.dev/) - 你将会喜欢上的 Vue Store
-- 🎨 [Windi CSS](https://github.com/windicss/windicss) - 下一代实用的原子 css 框架
+- 🎨 [Tailwind CSS](https://github.com/tailwindlabs/tailwindcss) - Tailwind CSS 框架
 - 😃 [icones](https://github.com/antfu/unplugin-icons) - 强大的图标库，各种图标集为你所用
 - 📑 [Markdown 支持](https://github.com/antfu/vite-plugin-md) - 随意的在页面中嵌入 Markdown
 - 🔑 完整支持的代码风格规范和代码提交规范
@@ -19,8 +19,7 @@
 
 ### UI 框架
 
-- [Windi CSS](https://github.com/windicss/windicss) (按需的 [TailwindCSS](https://tailwindcss.com/)) - 更轻，更快和和一系列额外的特性!
-  - [Windi CSS Typography](https://windicss.org/plugins/official/typography.html)
+- [Tailwind CSS](https://github.com/tailwindlabs/tailwindcss)
 - [Element Plus](https://github.com/element-plus/element-plus) - 基于 Vue.js 3 的强大 UI 库
 
 ### Icons
@@ -35,7 +34,6 @@
 - [Axios](https://github.com/axios/axios) - 基于 Promise 的 HTTP 请求库
 - [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components) - 自动按需加载组件
 - [unplugin-auto-import](https://github.com/antfu/unplugin-auto-import) - 自动按需加载 API
-- [vite-plugin-windicss](https://github.com/antfu/vite-plugin-windicss) - Windi CSS 的整合
 - [VueUse](https://github.com/antfu/vueuse) - 实用的 Composition API 工具合集
 
 ### 编码风格
@@ -46,9 +44,10 @@
 
 - [TypeScript](https://www.typescriptlang.org/)
 - [VS Code 扩展](./.vscode/extensions.json)
-  - [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) - Vue 3 IDE 支持
+  - [Vue Language Features (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) - Vue 3 IDE 支持
+  - [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) - Vue 3 Typescript 的 IDE 支持
   - [Iconify IntelliSense](https://marketplace.visualstudio.com/items?itemName=antfu.iconify) - 图标内联显示和自动补全
-  - [Windi CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=voorjaar.windicss-intellisense) - Windi CSS 的 IDE 支持
+  - [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) - Tailwind CSS 的 IDE 支持
   - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) - 代码质量和规则检查
   - [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) - 专注于代码格式化、美化代码
 
