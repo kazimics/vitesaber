@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import AutoImport from 'unplugin-auto-import/vite'
-import VueSetupExtend from 'vite-plugin-vue-setup-extend'
 import legacy from '@vitejs/plugin-legacy'
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
@@ -57,7 +56,6 @@ export default defineConfig({
       compiler: 'vue3',
       autoInstall: true
     }),
-    VueSetupExtend(),
     AutoImport({
       dts: './src/auto-imports.d.ts',
       imports: ['vue', 'pinia', 'vue-router', '@vueuse/core'],
