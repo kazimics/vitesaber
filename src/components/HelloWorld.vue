@@ -1,4 +1,4 @@
-<script setup lang="ts" name="HelloWorld">
+<script setup lang="ts">
 import { useCounterStore } from '@/stores/counters'
 const counter = useCounterStore()
 </script>

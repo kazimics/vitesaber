@@ -1,4 +1,4 @@
-<script lang="ts" setup name="Home">
+<script lang="ts" setup>
 import { useCounterStore } from '@/stores/counters'
 const counter = useCounterStore()
 </script>

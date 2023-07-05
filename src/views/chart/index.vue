@@ -1,4 +1,4 @@
-<script lang="ts" setup name="Chart">
+<script lang="ts" setup>
 import { $echarts, ECOption } from '@/utils/echarts'
 
 onMounted(() => {
